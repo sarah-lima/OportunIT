@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Viabilizador</title>
+</head>
+
+<body>
+    <div class="header" style="background-color: #fff;">
+            <img style="width: 50%;" src="./img/Alvarezzi.jpg">
+              
+    </div>
+            
+    <div class="topnav">
+        <a href="#">Home</a>
+        <a href="#">Cultivo</a>
+        <a href="#">Sobre</a>
+        <a href="#" style="float:right">Login</a>
+     </div>
+    
+    <div id="viabilizador"
+        style="height: 250px; border-radius: 25px; margin: 0 auto 0 auto; font-size: 30px; font: Arial; padding: 30px; text-align: center; border: 10px solid rgb(50, 121, 103); background-color: beige; width: 90%;">
+        <h1>Viabilizador Financeiro</h1>
+        <h2 style="font-size: 25px;">Alvarezii system</h2>
+    </div><br>
+    <div id="div_contasum"
+        style="margin-left: 7%; text-align: center; height: 310px; margin-right: 20px; float: left; background-color: beige; border-radius: 15px; text-align: justify; width: 39%; font-size: 20px; padding: 20px;  border: 10px solid rgb(50, 121, 103);">
+        <h2>Explicação:</h2> Algicultores possuem perda do plantio de cerca de 7% e cobram entre 2 a 4 dólares pelo quilo da alga; 
+        <br>Temos uma estimativa de 98% da colheita garantida por conseguir acompanhar o plantio e o desenvolvimento dando para o algicultor um lucro entre 5 a 7%.
+    </div>
+    <div id="div_contasdois"
+        style="float: left; background-color: beige; border-radius: 15px; text-align: center; width: 36.5%; font-size: 20px; padding: 20px;  border: 10px solid rgb(50, 121, 103);">
+         <h2>Informações:</h2>
+        Safra Total(em kg):<br><input size="40" maxlength="50" id="total"><br>
+        Quantidade vendida(em kg): <br><input size="40" maxlength="50" id="vendido"><br><br>
+        <button onclick="Calcular()">Calcular Valor dos Sensores</button><br>
+        <div id="div_contas"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function Calcular() {
+        var perdido = Number(total.value) - Number(vendido.value);
+        var salvo = (perdido * 0.05) / 0.07;
+        var salvo2 = perdido;
+        var lucro = salvo * 2;
+        var lucro2 = salvo * 4;
+
+        div_contas.innerHTML = `A quantidade de algas salvas do plantio será de: ${salvo.toFixed(0)} até ${salvo2} e terá um lucro entre U$${lucro.toFixed(2)} e U$${lucro2.toFixed(2)}`;
+    }
+</script>
+<style>
+    body {
+        padding: 10px;
+        background: #cccbcb;
+    }
+</style>
